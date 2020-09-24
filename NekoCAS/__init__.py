@@ -3,7 +3,7 @@ name = "NekoCAS"
 import requests
 
 
-class NekoCAS:
+class CAS:
     def __init__(self, domain, secret):
         self.domain = domain
         self.secret = secret
@@ -24,7 +24,7 @@ class NekoCAS:
             r = requests.get(target_url, params=params)
             r.raise_for_status()
             r = r.json()
-            
+
             if not r['success']:
                 return None, 'invalid ticket'
 
