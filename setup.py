@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='NekoCAS',
-    version='0.1',
+    version='0.2',
     description='NekoCAS SDK for Python',
     url='https://github.com/NekoWheel/NekoCAS_Python_SDK',
     author='E99p1ant',
