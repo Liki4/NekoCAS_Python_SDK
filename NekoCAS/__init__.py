@@ -22,12 +22,9 @@ class CAS:
         target_url = self.domain + "/validate"
         try:
             r = requests.get(target_url, params=params)
-            r.raise_for_status()
             r = r.json()
-
             if not r['success']:
                 return None, 'invalid ticket'
-
             return {
                        'name': r['data']['name'],
                        'email': r['data']['email'],
@@ -35,4 +32,4 @@ class CAS:
                        'message': r['message']
                    }, None
         except requests.RequestException as e:
-            return None, e.message
+            return None, 'request failed'
